@@ -6,12 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "add-component": "add-template component",
+    "add-helper": "add-template utility-function"
   },
   "dependencies": {
+    "classnames": "^2.3.1",
+    "fb-add-template": "^1.0.4",
     "next": "12.1.6",
+    "next-auth": "^4.3.4",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "sass": "^1.52.1"
   },
   "devDependencies": {
     "@types/node": "17.0.35",

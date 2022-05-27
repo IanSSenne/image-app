@@ -1,0 +1,31 @@
+.User {
+  display: flex;
+  vertical-align: middle;
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 200px;
+  background-color: antiquewhite;
+  .ico {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: black;
+    border-radius: 50%;
+  }
+  .UserInfo {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1em;
+    &:not(.WithEmail) {
+      justify-content: center;
+    }
+    .UserName {
+      font-size: large;
+    }
+    .UserEmail {
+      font-size: small;
+      overflow-x: hidden;
+      word-wrap: none;
+    }
+  }
+}
