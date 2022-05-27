@@ -28,26 +28,26 @@ const Home: NextPage = () => {
       ></IsAuthenticated>
     </>
   );
-  const { data: session } = useSession();
-  if (session) {
-    return (
-      <>
-        <User
-          ico={session.user?.image}
-          name={session.user?.name || "Unknown User"}
-          email={session.user?.email}
-        />
-        Signed in as {session.user?.email} <br />
-        <button onClick={() => signOut()}>Sign out</button>
-      </>
-    );
-  }
-  return (
-    <>
-      Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
-    </>
-  );
+  //   const { data: session } = useSession();
+  //   if (session) {
+  //     return (
+  //       <>
+  //         <User
+  //           ico={session.user?.image}
+  //           name={session.user?.name || "Unknown User"}
+  //           email={session.user?.email}
+  //         />
+  //         Signed in as {session.user?.email} <br />
+  //         <button onClick={() => signOut()}>Sign out</button>
+  //       </>
+  //     );
+  //   }
+  //   return (
+  //     <>
+  //       Not signed in <br />
+  //       <button onClick={() => signIn()}>Sign in</button>
+  //     </>
+  //   );
 };
 
 export default Home;
