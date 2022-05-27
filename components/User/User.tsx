@@ -1,4 +1,5 @@
 import classnames from "classnames";
+import { getProviders } from "next-auth/react";
 import React from "react";
 import { UserIcon, IUserIconProps } from "../UserIcon/UserIcon";
 
@@ -10,7 +11,29 @@ export interface IUserProps {
   name?: string | null;
   email?: string | null;
 }
-
+function usePromise<T extends Promise<any>>(
+  promise: T
+): {
+  value: (T extends Promise<infer R> ? R | null : null) | undefined;
+  resolved: boolean;
+  error: any;
+} {
+  const [value, setValue] =
+    React.useState<T extends Promise<infer R> ? R | null : null>();
+  const [resolved, setResolved] = React.useState<boolean>(false);
+  const [error, setError] = React.useState<any>(null);
+  React.useEffect(() => {
+    promise
+      .then(setValue)
+      .catch(setError)
+      .finally(() => setResolved(true));
+  }, [promise]);
+  return {
+    value,
+    resolved,
+    error,
+  };
+}
 export const User: React.FC<IUserProps> = (props: IUserProps) => {
   return (
     <div className={styles.User}>
