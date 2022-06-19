@@ -65,7 +65,7 @@ export default async function handler(
           res.status(500).json({ error: e.message });
         });
     } else {
-      res.status(401).json({ error: "Not logged in" });
+      res.status(401).json({ error: "Invalid User Id, wtf is going on" });
     }
     // res.status(200).json({ fields });
     // console.log(files.file);
